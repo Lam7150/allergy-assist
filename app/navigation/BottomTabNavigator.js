@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { FontAwesome5, Entypo, AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
-import { ColorSchemes } from '../constants/Colors';
 import HomeScreen from '../screens/HomeScreen';
 import ListScreen from '../screens/ListScreen';
 import SearchScreen from '../screens/SearchScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import HeaderTitle from "../components/Header";
+import { TAB_ICONS } from "../utils/utils"
 
 // This Stack Navigator serves primarily to display a header at the top of all the Home pages
 const Root = createStackNavigator();
@@ -50,7 +49,7 @@ function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="home" focused={focused} />,
           tabBarLabel: ""
         }}
       />
@@ -58,7 +57,7 @@ function BottomTabNavigator() {
         name="List"
         component={ListScreen}
         options={{
-          tabBarIcon: ({ color }) => <ListIcon color={color} />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="list" focused={focused} />,
           tabBarLabel: ""
         }}
       />
@@ -66,7 +65,7 @@ function BottomTabNavigator() {
         name="Search"
         component={SearchScreen}
         options={{
-          tabBarIcon: ({ color }) => <SearchIcon color={color} />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="search" focused={focused} />,
           tabBarLabel: ""
         }}
       />
@@ -74,7 +73,7 @@ function BottomTabNavigator() {
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="user" focused={focused} />,
           tabBarLabel: ""
         }}
       />
@@ -82,28 +81,12 @@ function BottomTabNavigator() {
   );
 }
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-function TabBarIcon(props) {
-  const { name, color } = props;
-  return <MaterialIcons size={30} style={{ marginBottom: -3 }} {...props} />;
+const TabBarIcon = (props) => {
+  const { name, focused } = props;
+  let activeName = name + (focused ? "-active" : "")
+
+  return (<Image style={{ height: 30, width: 30, marginBottom: -15 }} source={TAB_ICONS[activeName]} />);
 }
-
-const HomeIcon = (props) => (
-  <Entypo name="home" size={30} style={{ marginBottom: -15 }} color={props.color} />
-)
-
-const ListIcon = (props) => (
-  <FontAwesome5 name="list-ul" size={30} style={{ marginBottom: -15 }} color={props.color} />
-)
-
-const SearchIcon = (props) => (
-  <AntDesign name="search1" size={30} style={{ marginBottom: -15 }} color={props.color} />
-)
-
-const SettingsIcon = (props) => (
-  <FontAwesome5 name="user" size={30} style={{ marginBottom: -15 }} color={props.color} />
-)
 
 const styles = StyleSheet.create({
   headerTitleContainer: {
