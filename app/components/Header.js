@@ -6,7 +6,7 @@ export default function HeaderTitle() {
     return (<View style={styles.container}>
         <Text style={styles.title}>Allergy Assist</Text>
         <View style={styles.iconContainer}>
-            <ProfileButton size={40} initials="EE" />
+            <ProfileButton size={32} initials="EE" />
         </View>
     </View>);
 }

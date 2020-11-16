@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 40,
+        borderColor: "#D6D6D6",
         borderWidth: 1,
-        paddingLeft: 1
+        paddingLeft: 1,
     },
     text: {
-        fontSize: 17,
-        fontWeight: "500"
+        fontSize: 15,
     }
 });

@@ -1,0 +1,38 @@
+{
+    "recommended_restaurants": [
+        {
+            "name": "Chick-fil-A",
+            "distance": 1.5,
+            "edible": 13
+        },
+        {
+            "name": "Olive Garden",
+            "distance": 3,
+            "edible": 8
+        }
+    ],
+    "restaurants_near_you": [
+        {
+            "name": "McDonalds",
+            "distance": 0.4,
+            "edible": 5
+        },
+        {
+            "name": "Mia Za's",
+            "distance": 0.8,
+            "edible": 3
+        }
+    ],
+    "top_rated": [
+        {
+            "name": "Burger King",
+            "distance": 4,
+            "edible": 12
+        },
+        {
+            "name": "Wendys",
+            "distance": 5,
+            "edible": 9
+        }
+    ]
+}
