@@ -15,7 +15,8 @@ export default function HeaderTitle() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        paddingLeft: 10,
+        alignItems: "flex-start",
         justifyContent: "center"
     },
     iconContainer: {
