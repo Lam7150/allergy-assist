@@ -5,7 +5,7 @@ import SlideSection from "../components/SlideSection"
 import * as data from "../data/restaurants.json"
 const { recommended_restaurants, restaurants_near_you, top_rated } = data
 
-function MainScreen() {
+function HomeScreen() {
     const renderItem = ({ item, index }) => (
         < View style={styles.itemContainer} >
             <SlideSection title={item.title} data={item.data} />
@@ -25,7 +25,7 @@ function MainScreen() {
     </View>);
 }
 
-export default MainScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
     container: {

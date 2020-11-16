@@ -2,7 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
 
-import MainNavigator from './MainNavigator';
+import BottomTabNavigator from './BottomTabNavigator';
+import DrawerScreen from "../screens/DrawerScreen"
 
 export default function Navigation() {
   return (
@@ -16,8 +17,8 @@ const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
   return (
-    <Drawer.Navigator drawerPosition="right" >
-      <Drawer.Screen name="Main" component={MainNavigator} />
+    <Drawer.Navigator drawerPosition="right" drawerContent={DrawerScreen}>
+      <Drawer.Screen name="Home" component={BottomTabNavigator} />
     </Drawer.Navigator>
   );
 }

@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import InitialIcon from "./InitialIcon";
 
 export default function ProfileButton(props) {
-    const navigation = useNavigation();
+    const navigation = useNavigation()
     const { size, initials } = props;
 
     return (<View style={styles.container}>
