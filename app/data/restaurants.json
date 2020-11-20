@@ -84,7 +84,53 @@
         {
             "name": "Olive Garden",
             "distance": 3,
-            "edible": 8
+            "edible": 8,
+            "menu_items": [
+              {
+                "name": "Lasagna Classico",
+                "price": 15.79,
+                "ingredients": [
+                  "pasta",
+                  "parmesan",
+                  "mozzarella",
+                  "pecorino romano",
+                  "tomato sauce",
+                  "pan-seared beef",
+                  "Italian Sausage"
+                ],
+                "allergens": [
+                  "Dairy",
+                  "Wheat",
+                  "Gluten",
+                  "Soy"
+                ]
+              },
+              {
+                "name": "Fettucine Alfredo",
+                "price": 13.99,
+                "ingredients": [
+                  "Parmesan Cheese",
+                  "Heavy Cream",
+                  "Garlic",
+                  "Fettucine Pasta"
+                ],
+                "allergens": [
+                  "Dairy",
+                  "Wheat",
+                  "Gluten"
+                ]
+              }
+            ],
+            "reviews" : [
+              {
+                "stars": 4,
+                "comment": "oogabooga3"
+              },
+              {
+                "stars": 4,
+                "comment": "oogabooga4"
+              }
+            ]
         }
     ],
     "restaurants_near_you": [
