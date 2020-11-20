@@ -137,12 +137,106 @@
         {
             "name": "McDonalds",
             "distance": 0.4,
-            "edible": 5
+            "edible": 5,
+            "menu_items": [
+              {
+                "name": "Big Mac",
+                "price": 5.99,
+                "ingredients": [
+                  "bun",
+                  "beef patty",
+                  "shredded lettuce",
+                  "big mac sauce",
+                  "american cheese",
+                  "pickle",
+                  "onions"
+                ],
+                "allergens": [
+                  "Dairy",
+                  "Wheat",
+                  "Egg",
+                  "Soy"
+                ]
+              },
+              {
+                "name": "McDouble",
+                "price": 1.99,
+                "ingredients": [
+                  "bun",
+                  "beef patty",
+                  "shredded lettuce",
+                  "ketchup",
+                  "american cheese",
+                  "pickle",
+                  "onions",
+                  "mustard"
+                ],
+                "allergens": [
+                  "Milk",
+                  "Wheat",
+                  "Soy"
+                ]
+              }
+            ],
+            "reviews" : [
+              {
+                "stars": 2,
+                "comment": "oogabooga5"
+              },
+              {
+                "stars": 3,
+                "comment": "oogabooga6"
+              }
+            ]
         },
         {
             "name": "Mia Za's",
             "distance": 0.8,
             "edible": 3
+            "menu_items": [
+              {
+                "name": "Hawaiian Pizza",
+                "price": 7.99,
+                "ingredients": [
+                  "dough",
+                  "tomato sauce",
+                  "mozzarella",
+                  "parmesan",
+                  "pineapple",
+                  "canadian bacon",
+                  "bacon"
+                ],
+                "allergens": [
+                  "Dairy",
+                  "Wheat",
+                ]
+              },
+              {
+                "name": "Fettucine Alfredo",
+                "price": 8.99,
+                "ingredients": [
+                  "Parmesan Cheese",
+                  "Heavy Cream",
+                  "Garlic",
+                  "Fettucine Pasta"
+                ],
+                "allergens": [
+                  "Dairy",
+                  "Wheat",
+                  "Gluten"
+                ]
+              }
+            ],
+            "reviews" : [
+              {
+                "stars": 4,
+                "comment": "oogabooga7"
+              },
+              {
+                "stars": 4,
+                "comment": "oogabooga8"
+              }
+            ]
         }
     ],
     "top_rated": [
