@@ -1,254 +1,254 @@
 {
-    "recommended_restaurants": [
+  "recommended_restaurants": [
+    {
+      "name": "Chick-fil-A",
+      "distance": 1.5,
+      "edible": 13,
+      "menu_items": [
         {
-            "name": "Chick-fil-A",
-            "distance": 1.5,
-            "edible": 13,
-            "menu_items": [
-              {
-                "name": "Chick-fil-A Chicken Sandwich",
-                "price": 3.75,
-                "ingredients": [
-                  "Butter",
-                  "Pickles",
-                  "White Bun",
-                  "Chicken",
-                  "Peanut Oil"
-                ],
-                "allergens": [
-                  "Peanut",
-                ]
-              },
-              {
-                "name": "Chick-fil-A Deluxe Sandwich",
-                "price": 4.45,
-                "ingredients": [
-                  "Butter",
-                  "Pickles",
-                  "White Bun",
-                  "Chicken",
-                  "Peanut Oil",
-                  "Lettuce",
-                  "Tomato"
-                ],
-                "allergens": [
-                  "Peanut",
-                ]
-              },
-              {
-                "name": "Spicy Chicken Sandwich",
-                "price": 3.99,
-                "ingredients": [
-                  "Butter",
-                  "Pickles",
-                  "White Bun",
-                  "Breaded Chicken",
-                  "Peanut Oil",
-                  "Peppers"
-                ],
-                "allergens": [
-                  "Peanut"
-                ]
-              },
-              {
-                "name": "Spicy Deluxe Sandwich",
-                "price": 4.69,
-                "ingredients": [
-                  "Butter",
-                  "Pickles",
-                  "White Bun",
-                  "Chicken",
-                  "Peanut Oil",
-                  "Lettuce",
-                  "Tomato",
-                  "Peppers",
-                  "Cheese"
-                ],
-                "allergens": [
-                  "Peanut",
-                  "Dairy"
-                ]
-              }
-            ],
-            "reviews" : [
-              {
-                "stars": 5,
-                "comment": "oogabooga1"
-              },
-              {
-                "stars": 4,
-                "comment": "oogabooga2"
-              }
-            ]
+          "name": "Chick-fil-A Chicken Sandwich",
+          "price": 3.75,
+          "ingredients": [
+            "Butter",
+            "Pickles",
+            "White Bun",
+            "Chicken",
+            "Peanut Oil"
+          ],
+          "allergens": [
+            "Peanut"
+          ]
         },
         {
-            "name": "Olive Garden",
-            "distance": 3,
-            "edible": 8,
-            "menu_items": [
-              {
-                "name": "Lasagna Classico",
-                "price": 15.79,
-                "ingredients": [
-                  "pasta",
-                  "parmesan",
-                  "mozzarella",
-                  "pecorino romano",
-                  "tomato sauce",
-                  "pan-seared beef",
-                  "Italian Sausage"
-                ],
-                "allergens": [
-                  "Dairy",
-                  "Wheat",
-                  "Gluten",
-                  "Soy"
-                ]
-              },
-              {
-                "name": "Fettucine Alfredo",
-                "price": 13.99,
-                "ingredients": [
-                  "Parmesan Cheese",
-                  "Heavy Cream",
-                  "Garlic",
-                  "Fettucine Pasta"
-                ],
-                "allergens": [
-                  "Dairy",
-                  "Wheat",
-                  "Gluten"
-                ]
-              }
-            ],
-            "reviews" : [
-              {
-                "stars": 4,
-                "comment": "oogabooga3"
-              },
-              {
-                "stars": 4,
-                "comment": "oogabooga4"
-              }
-            ]
-        }
-    ],
-    "restaurants_near_you": [
-        {
-            "name": "McDonalds",
-            "distance": 0.4,
-            "edible": 5,
-            "menu_items": [
-              {
-                "name": "Big Mac",
-                "price": 5.99,
-                "ingredients": [
-                  "bun",
-                  "beef patty",
-                  "shredded lettuce",
-                  "big mac sauce",
-                  "american cheese",
-                  "pickle",
-                  "onions"
-                ],
-                "allergens": [
-                  "Dairy",
-                  "Wheat",
-                  "Egg",
-                  "Soy"
-                ]
-              },
-              {
-                "name": "McDouble",
-                "price": 1.99,
-                "ingredients": [
-                  "bun",
-                  "beef patty",
-                  "shredded lettuce",
-                  "ketchup",
-                  "american cheese",
-                  "pickle",
-                  "onions",
-                  "mustard"
-                ],
-                "allergens": [
-                  "Milk",
-                  "Wheat",
-                  "Soy"
-                ]
-              }
-            ],
-            "reviews" : [
-              {
-                "stars": 2,
-                "comment": "oogabooga5"
-              },
-              {
-                "stars": 3,
-                "comment": "oogabooga6"
-              }
-            ]
+          "name": "Chick-fil-A Deluxe Sandwich",
+          "price": 4.45,
+          "ingredients": [
+            "Butter",
+            "Pickles",
+            "White Bun",
+            "Chicken",
+            "Peanut Oil",
+            "Lettuce",
+            "Tomato"
+          ],
+          "allergens": [
+            "Peanut"
+          ]
         },
         {
-            "name": "Mia Za's",
-            "distance": 0.8,
-            "edible": 3
-            "menu_items": [
-              {
-                "name": "Hawaiian Pizza",
-                "price": 7.99,
-                "ingredients": [
-                  "dough",
-                  "tomato sauce",
-                  "mozzarella",
-                  "parmesan",
-                  "pineapple",
-                  "canadian bacon",
-                  "bacon"
-                ],
-                "allergens": [
-                  "Dairy",
-                  "Wheat",
-                ]
-              },
-              {
-                "name": "Fettucine Alfredo",
-                "price": 8.99,
-                "ingredients": [
-                  "Parmesan Cheese",
-                  "Heavy Cream",
-                  "Garlic",
-                  "Fettucine Pasta"
-                ],
-                "allergens": [
-                  "Dairy",
-                  "Wheat",
-                  "Gluten"
-                ]
-              }
-            ],
-            "reviews" : [
-              {
-                "stars": 4,
-                "comment": "oogabooga7"
-              },
-              {
-                "stars": 4,
-                "comment": "oogabooga8"
-              }
-            ]
-        }
-    ],
-    "top_rated": [
-        {
-            "name": "Burger King",
-            "distance": 4,
-            "edible": 12
+          "name": "Spicy Chicken Sandwich",
+          "price": 3.99,
+          "ingredients": [
+            "Butter",
+            "Pickles",
+            "White Bun",
+            "Breaded Chicken",
+            "Peanut Oil",
+            "Peppers"
+          ],
+          "allergens": [
+            "Peanut"
+          ]
         },
         {
-            "name": "Wendys",
-            "distance": 5,
-            "edible": 9
+          "name": "Spicy Deluxe Sandwich",
+          "price": 4.69,
+          "ingredients": [
+            "Butter",
+            "Pickles",
+            "White Bun",
+            "Chicken",
+            "Peanut Oil",
+            "Lettuce",
+            "Tomato",
+            "Peppers",
+            "Cheese"
+          ],
+          "allergens": [
+            "Peanut",
+            "Dairy"
+          ]
         }
-    ]
+      ],
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "oogabooga1"
+        },
+        {
+          "stars": 4,
+          "comment": "oogabooga2"
+        }
+      ]
+    },
+    {
+      "name": "Olive Garden",
+      "distance": 3,
+      "edible": 8,
+      "menu_items": [
+        {
+          "name": "Lasagna Classico",
+          "price": 15.79,
+          "ingredients": [
+            "pasta",
+            "parmesan",
+            "mozzarella",
+            "pecorino romano",
+            "tomato sauce",
+            "pan-seared beef",
+            "Italian Sausage"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+            "Gluten",
+            "Soy"
+          ]
+        },
+        {
+          "name": "Fettucine Alfredo",
+          "price": 13.99,
+          "ingredients": [
+            "Parmesan Cheese",
+            "Heavy Cream",
+            "Garlic",
+            "Fettucine Pasta"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+            "Gluten"
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "oogabooga3"
+        },
+        {
+          "stars": 4,
+          "comment": "oogabooga4"
+        }
+      ]
+    }
+  ],
+  "restaurants_near_you": [
+    {
+      "name": "McDonalds",
+      "distance": 0.4,
+      "edible": 5,
+      "menu_items": [
+        {
+          "name": "Big Mac",
+          "price": 5.99,
+          "ingredients": [
+            "bun",
+            "beef patty",
+            "shredded lettuce",
+            "big mac sauce",
+            "american cheese",
+            "pickle",
+            "onions"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+            "Egg",
+            "Soy"
+          ]
+        },
+        {
+          "name": "McDouble",
+          "price": 1.99,
+          "ingredients": [
+            "bun",
+            "beef patty",
+            "shredded lettuce",
+            "ketchup",
+            "american cheese",
+            "pickle",
+            "onions",
+            "mustard"
+          ],
+          "allergens": [
+            "Milk",
+            "Wheat",
+            "Soy"
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 2,
+          "comment": "oogabooga5"
+        },
+        {
+          "stars": 3,
+          "comment": "oogabooga6"
+        }
+      ]
+    },
+    {
+      "name": "Mia Za's",
+      "distance": 0.8,
+      "edible": 3,
+      "menu_items": [
+        {
+          "name": "Hawaiian Pizza",
+          "price": 7.99,
+          "ingredients": [
+            "dough",
+            "tomato sauce",
+            "mozzarella",
+            "parmesan",
+            "pineapple",
+            "canadian bacon",
+            "bacon"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+          ]
+        },
+        {
+          "name": "Fettucine Alfredo",
+          "price": 8.99,
+          "ingredients": [
+            "Parmesan Cheese",
+            "Heavy Cream",
+            "Garlic",
+            "Fettucine Pasta"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+            "Gluten"
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "oogabooga7"
+        },
+        {
+          "stars": 4,
+          "comment": "oogabooga8"
+        }
+      ]
+    }
+  ],
+  "top_rated": [
+    {
+      "name": "Burger King",
+      "distance": 4,
+      "edible": 12
+    },
+    {
+      "name": "Wendys",
+      "distance": 5,
+      "edible": 9
+    }
+  ]
 }

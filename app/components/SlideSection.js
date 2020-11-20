@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
-import Card from "./Card"
+import RestaurantCard from "./RestaurantCard"
 
 export default function SlideSection(props) {
     const { title, data } = props
 
     const renderItem = ({ item, index }) => (
         < View style={styles.itemContainer} >
-            <Card data={item} />
+            <RestaurantCard data={item} />
         </View >
     )
 

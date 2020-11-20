@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { RESTAURANT_IMAGE } from "../utils/utils"
 import { useNavigation } from '@react-navigation/native';
 
-export default function Card(props) {
+export default function RestaurantCard(props) {
     const navigation = useNavigation();
     const { data } = props;
     const { name, distance, edible } = data;
