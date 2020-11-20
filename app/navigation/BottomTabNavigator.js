@@ -4,9 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Image, StyleSheet } from "react-native";
 
 import HomeScreen from '../screens/HomeScreen';
-import ListScreen from '../screens/ListScreen';
 import SearchScreen from '../screens/SearchScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import UserScreen from '../screens/UserScreen';
+import RestaurantScreen from "../screens/RestaurantScreen";
 import HeaderTitle from "../components/Header";
 import { TAB_ICONS } from "../utils/utils"
 
@@ -47,17 +47,9 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Home"
-        component={HomeScreen}
+        component={RestaurantNavigator}
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon name="home" focused={focused} />,
-          tabBarLabel: ""
-        }}
-      />
-      <BottomTab.Screen
-        name="List"
-        component={ListScreen}
-        options={{
-          tabBarIcon: ({ focused }) => <TabBarIcon name="list" focused={focused} />,
           tabBarLabel: ""
         }}
       />
@@ -65,19 +57,39 @@ function BottomTabNavigator() {
         name="Search"
         component={SearchScreen}
         options={{
-          tabBarIcon: ({ focused }) => <TabBarIcon name="search" focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="list" focused={focused} />,
           tabBarLabel: ""
         }}
       />
       <BottomTab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="User"
+        component={UserScreen}
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon name="user" focused={focused} />,
           tabBarLabel: ""
         }}
       />
     </BottomTab.Navigator>
+  );
+}
+
+const RestaurantStack = createStackNavigator();
+
+export function RestaurantNavigator() {
+  return (
+    <RestaurantStack.Navigator initialRouteName="Home"
+      screenOptions={{
+        headerShown: false
+      }}>
+      <RestaurantStack.Screen
+        name="Home"
+        component={HomeScreen}>
+      </RestaurantStack.Screen>
+      <RestaurantStack.Screen
+        name="RestaurantScreen"
+        component={RestaurantScreen}
+      />
+    </RestaurantStack.Navigator>
   );
 }
 

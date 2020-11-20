@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TextInput, StyleSheet } from "react-native";
+import Button from "../components/Button";
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function SearchBar() {
@@ -10,11 +11,7 @@ export default function SearchBar() {
             <FontAwesome style={{ marginTop: -2 }} name="location-arrow" size={24} color="#EF767A" />
             <TextInput placeholder="Using your current location..." style={styles.textInput} onChangeText={text => setLocation(text)} />
         </View>
-        <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>
-                GO
-            </Text>
-        </TouchableOpacity>
+        <Button style={styles.button} text="GO" />
     </View>);
 }
 
@@ -44,15 +41,5 @@ const styles = StyleSheet.create({
     },
     button: {
         flex: 0.15,
-        height: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#EF767A",
-        borderRadius: 2
     },
-    buttonText: {
-        fontSize: 16,
-        fontWeight: "700",
-        color: "#fff"
-    }
 });

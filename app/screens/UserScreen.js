@@ -1,16 +1,16 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-function ListScreen() {
+function UserScreen() {
     return (<View style={styles.container}>
         <Image style={styles.logo} source={require('../../assets/allergy-assist.png')}></Image>
         <Text style={styles.caption}>
-            List Screen
+            User Screen
         </Text>
     </View>);
 }
 
-export default ListScreen;
+export default UserScreen;
 
 const styles = StyleSheet.create({
     container: {

@@ -1,12 +1,14 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { RESTAURANT_IMAGE } from "../utils/utils"
+import { useNavigation } from '@react-navigation/native';
 
 export default function Card(props) {
+    const navigation = useNavigation();
     const { data } = props;
     const { name, distance, edible } = data;
 
-    return (<TouchableOpacity style={styles.container}>
+    return (<TouchableOpacity style={styles.container} onPress={() => navigation.navigate("RestaurantScreen", { data: data })}>
         <Image source={RESTAURANT_IMAGE[name]} resizeMode="cover" style={styles.image} />
         <Text style={styles.name}>
             {name}
