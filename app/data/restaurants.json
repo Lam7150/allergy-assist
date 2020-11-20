@@ -3,7 +3,83 @@
         {
             "name": "Chick-fil-A",
             "distance": 1.5,
-            "edible": 13
+            "edible": 13,
+            "menu_items": [
+              {
+                "name": "Chick-fil-A Chicken Sandwich",
+                "price": 3.75,
+                "ingredients": [
+                  "Butter",
+                  "Pickles",
+                  "White Bun",
+                  "Chicken",
+                  "Peanut Oil"
+                ],
+                "allergens": [
+                  "Peanut",
+                ]
+              },
+              {
+                "name": "Chick-fil-A Deluxe Sandwich",
+                "price": 4.45,
+                "ingredients": [
+                  "Butter",
+                  "Pickles",
+                  "White Bun",
+                  "Chicken",
+                  "Peanut Oil",
+                  "Lettuce",
+                  "Tomato"
+                ],
+                "allergens": [
+                  "Peanut",
+                ]
+              },
+              {
+                "name": "Spicy Chicken Sandwich",
+                "price": 3.99,
+                "ingredients": [
+                  "Butter",
+                  "Pickles",
+                  "White Bun",
+                  "Breaded Chicken",
+                  "Peanut Oil",
+                  "Peppers"
+                ],
+                "allergens": [
+                  "Peanut"
+                ]
+              },
+              {
+                "name": "Spicy Deluxe Sandwich",
+                "price": 4.69,
+                "ingredients": [
+                  "Butter",
+                  "Pickles",
+                  "White Bun",
+                  "Chicken",
+                  "Peanut Oil",
+                  "Lettuce",
+                  "Tomato",
+                  "Peppers",
+                  "Cheese"
+                ],
+                "allergens": [
+                  "Peanut",
+                  "Dairy"
+                ]
+              }
+            ],
+            "reviews" : [
+              {
+                "stars": 5,
+                "comment": "oogabooga1"
+              },
+              {
+                "stars": 4,
+                "comment": "oogabooga2"
+              }
+            ]
         },
         {
             "name": "Olive Garden",
