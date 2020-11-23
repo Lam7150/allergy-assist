@@ -39,8 +39,8 @@ function MealScreen(props) {
                 INGREDIENTS
             </Text>
             {ingredients.map((item, index) => (
-                <View style={styles.ingredient} >
-                    <Entypo key={index.toString()} name="check" size={24} color="#EF767A" />
+                <View style={styles.ingredient} key={index.toString()}>
+                    <Entypo name="check" size={24} color="#EF767A" />
                     <Text> {item} </Text>
                 </View>
             ))}

@@ -5,9 +5,10 @@ import ProfileButton from "./ProfileButton";
 export default function HeaderTitle() {
     return (<View style={styles.container}>
         <Text style={styles.title}>Allergy Assist</Text>
-        <View style={styles.iconContainer}>
+        {/* <View style={styles.iconContainer}> 
+            // Deprecated for now
             <ProfileButton size={32} initials="EE" />
-        </View>
+        </View> */}
     </View>);
 }
 

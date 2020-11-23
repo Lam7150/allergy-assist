@@ -33,7 +33,7 @@ export default function ErrorModal(props) {
                     color="#EF767A"
                 />
             ))}
-            <TextInput style={styles.errorInput} placeholder={"Report an error here..."} multiline={true} />
+            <TextInput style={styles.errorInput} placeholder={"Report an error here..."} multiline={true} blurOnSubmit={true} />
             <Button style={styles.button} onPress={() => onSubmit()} textStyle={{ fontSize: 16 }} text="Submit Error" />
         </View>
     </View>);

@@ -4,12 +4,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Image, StyleSheet } from "react-native";
 
 import HomeScreen from '../screens/HomeScreen';
-import SearchScreen from '../screens/SearchScreen';
 import UserScreen from '../screens/UserScreen';
 import RestaurantScreen from "../screens/RestaurantScreen";
 import MealScreen from "../screens/MealScreen";
 import HeaderTitle from "../components/Header";
-import { TAB_ICONS } from "../utils/utils"
+import { TAB_ICONS } from "../utils/utils";
 
 // This Stack Navigator serves primarily to display a header at the top of all the Home pages
 const Root = createStackNavigator();
@@ -51,14 +50,6 @@ function BottomTabNavigator() {
         component={RestaurantNavigator}
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon name="home" focused={focused} />,
-          tabBarLabel: ""
-        }}
-      />
-      <BottomTab.Screen
-        name="Search"
-        component={SearchScreen}
-        options={{
-          tabBarIcon: ({ focused }) => <TabBarIcon name="list" focused={focused} />,
           tabBarLabel: ""
         }}
       />

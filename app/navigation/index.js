@@ -8,11 +8,12 @@ import DrawerScreen from "../screens/DrawerScreen";
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <RootNavigator />
+      <BottomTabNavigator />
     </NavigationContainer>
   );
 }
 
+// Deprecated for now
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {

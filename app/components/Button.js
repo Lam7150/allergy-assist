@@ -19,7 +19,9 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#EF767A",
-        borderRadius: 2
+        borderRadius: 2,
+        shadowOpacity: 0.15,
+        shadowOffset: { width: 1, height: 1 }
     },
     text: {
         fontSize: 16,

@@ -22,7 +22,7 @@ export default function ReviewModal(props) {
                     selectedColor='#EF767A'
                 />
             </View>
-            <TextInput style={styles.reviewInput} placeholder={"Write a review here..."} multiline={true} />
+            <TextInput style={styles.reviewInput} placeholder={"Write a review here..."} multiline={true} blurOnSubmit={true} />
             <Button style={styles.button} onPress={() => onSubmit()} textStyle={{ fontSize: 16 }} text="Submit Review" />
         </View>
     </View>);

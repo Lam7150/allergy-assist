@@ -59,69 +59,73 @@ function RestaurantScreen(props) {
     }
 
     return (<SafeAreaView style={styles.container}>
-        <ScrollView>
-            <TouchableOpacity style={styles.backContainer} onPress={() => navigation.goBack()}>
-                <FontAwesome5 style={{ marginRight: 4, marginTop: 1, marginBottom: 12 }} name="arrow-left" size={18} color="#EF767A" />
-                <Text style={styles.backText}>
-                    Go Back
-            </Text>
-            </TouchableOpacity>
-            <Image style={styles.image} source={RESTAURANT_IMAGE[name]} resizeMode="cover" style={styles.image} />
-            <Text style={styles.name}>
-                {name}
-            </Text>
-            <Text style={styles.description}>
-                {`${distance} miles away`}
-            </Text>
-            <View style={styles.buttonContainer}>
-                <Button style={styles.button} textStyle={{ fontSize: 14 }} text="GET DIRECTIONS" />
-                <View style={styles.buttonDiv} />
-                <Button style={styles.button} textStyle={{ fontSize: 14 }} text="CALL RESTAURANT" />
-            </View>
-            <Text style={styles.menuTitle}>
-                Menu items you can eat
-            </Text>
-            {edible_menu_items().map((item, index) => renderMeal(item, index))}
-            <Text style={styles.menuTitle}>
-                Menu items you can't eat
-            </Text>
-            {inedible_menu_items().map((item, index) => renderMeal(item, index))}
-            <Text style={{ ...styles.menuTitle, fontSize: 18 }}>
-                Reviews
-            </Text>
-            <View style={styles.ratingContainer}>
-                <AirbnbRating
-                    defaultRating={4.5}
-                    showRating={false}
-                    selectedColor='#EF767A'
-                    isDisabled={true}
-                />
-            </View>
-            <Text style={styles.menuTitle}>
-                {`${average_rating()} Stars Overall`}
-            </Text>
-            <FlatList
-                style={styles.listContainer}
-                data={reviews}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={renderReview}
-            />
-            <Button style={styles.button} onPress={() => setrModalVisible(true)} textStyle={{ fontSize: 14 }} text="Leave a review" />
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={rModalVisible}
-            >
-                <ReviewModal onClose={() => setrModalVisible(false)} onSubmit={() => { setrModalVisible(false); setcModalVisible(true) }} />
-            </Modal>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={cModalVisible}
-            >
-                <ConfirmationModal onClose={() => setcModalVisible(false)} text="Thank you for leaving a review!" />
-            </Modal>
-        </ScrollView>
+        <FlatList
+            ListHeaderComponent={
+                <>
+                    <TouchableOpacity style={styles.backContainer} onPress={() => navigation.goBack()}>
+                        <FontAwesome5 style={{ marginRight: 4, marginTop: 1, marginBottom: 12 }} name="arrow-left" size={18} color="#EF767A" />
+                        <Text style={styles.backText}>
+                            Go Back
+                        </Text>
+                    </TouchableOpacity>
+                    <Image style={styles.image} source={RESTAURANT_IMAGE[name]} resizeMode="cover" style={styles.image} />
+                    <Text style={styles.name}>
+                        {name}
+                    </Text>
+                    <Text style={styles.description}>
+                        {`${distance} miles away`}
+                    </Text>
+                    <View style={styles.buttonContainer}>
+                        <Button style={styles.button} textStyle={{ fontSize: 14 }} text="GET DIRECTIONS" />
+                        <View style={styles.buttonDiv} />
+                        <Button style={styles.button} textStyle={{ fontSize: 14 }} text="CALL RESTAURANT" />
+                    </View>
+                    <Text style={styles.menuTitle}>
+                        Menu items you can eat
+                    </Text>
+                    {edible_menu_items().map((item, index) => renderMeal(item, index))}
+                    <Text style={styles.menuTitle}>
+                        Menu items you can't eat
+                    </Text>
+                    {inedible_menu_items().map((item, index) => renderMeal(item, index))}
+                    <Text style={{ ...styles.menuTitle, fontSize: 18 }}>
+                        Reviews
+                    </Text>
+                    <View style={styles.ratingContainer}>
+                        <AirbnbRating
+                            defaultRating={4.5}
+                            showRating={false}
+                            selectedColor='#EF767A'
+                            isDisabled={true}
+                        />
+                    </View>
+                    <Text style={styles.menuTitle}>
+                        {`${average_rating()} Stars Overall`}
+                    </Text>
+                </>
+            }
+            style={styles.listContainer}
+            data={reviews}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={renderReview}
+            ListFooterComponent={
+                <>
+                    <Button style={styles.button} onPress={() => setrModalVisible(true)} textStyle={{ fontSize: 14 }} text="Leave a review" />
+                </>
+            }
+        />
+        <Modal
+            animationType="slide"
+            transparent={true}
+            visible={rModalVisible}>
+            <ReviewModal onClose={() => setrModalVisible(false)} onSubmit={() => { setrModalVisible(false); setcModalVisible(true) }} />
+        </Modal>
+        <Modal
+            animationType="slide"
+            transparent={true}
+            visible={cModalVisible}>
+            <ConfirmationModal onClose={() => setcModalVisible(false)} text="Thank you for leaving a review!" />
+        </Modal>
     </SafeAreaView>);
 }
 
