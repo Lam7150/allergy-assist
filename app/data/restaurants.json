@@ -72,12 +72,14 @@
       ],
       "reviews": [
         {
-          "stars": 5,
-          "comment": "oogabooga1"
+          "rating": 4,
+          "name": "Jennifer L.",
+          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
         },
         {
-          "stars": 4,
-          "comment": "oogabooga2"
+          "rating": 4,
+          "name": "Susan F.",
+          "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
     },
@@ -123,12 +125,14 @@
       ],
       "reviews": [
         {
-          "stars": 4,
-          "comment": "oogabooga3"
+          "rating": 4,
+          "name": "Jennifer L.",
+          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
         },
         {
-          "stars": 4,
-          "comment": "oogabooga4"
+          "rating": 4,
+          "name": "Susan F.",
+          "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
     }
@@ -180,12 +184,14 @@
       ],
       "reviews": [
         {
-          "stars": 2,
-          "comment": "oogabooga5"
+          "rating": 4,
+          "name": "Jennifer L.",
+          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
         },
         {
-          "stars": 3,
-          "comment": "oogabooga6"
+          "rating": 4,
+          "name": "Susan F.",
+          "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
     },
@@ -208,7 +214,7 @@
           ],
           "allergens": [
             "Dairy",
-            "Wheat",
+            "Wheat"
           ]
         },
         {
@@ -229,12 +235,14 @@
       ],
       "reviews": [
         {
-          "stars": 4,
-          "comment": "oogabooga7"
+          "rating": 4,
+          "name": "Jennifer L.",
+          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
         },
         {
-          "stars": 4,
-          "comment": "oogabooga8"
+          "rating": 4,
+          "name": "Susan F.",
+          "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
     }

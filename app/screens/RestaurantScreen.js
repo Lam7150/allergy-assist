@@ -1,7 +1,11 @@
-import React from "react";
-import { View, SafeAreaView, FlatList, ScrollView, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, SafeAreaView, FlatList, ScrollView, Text, Image, TouchableOpacity, StyleSheet, Modal } from "react-native";
 import Button from "../components/Button"
 import MealCard from "../components/MealCard"
+import ReviewCard from "../components/ReviewCard"
+import ReviewModal from "../components/ReviewModal"
+import ConfirmationModal from "../components/ConfirmationModal"
+import { AirbnbRating } from "react-native-ratings"
 import { FontAwesome5 } from '@expo/vector-icons';
 import { RESTAURANT_IMAGE } from "../utils/utils"
 
@@ -10,6 +14,15 @@ function RestaurantScreen(props) {
     const { data } = route.params;
     const { name, distance, edible, menu_items, reviews } = data;
     const allergies = ["Dairy"]
+    const [rModalVisible, setrModalVisible] = useState(false);
+    const [cModalVisible, setcModalVisible] = useState(false);
+
+    const average_rating = () => {
+        let sum = 0;
+        for (let review of reviews)
+            sum += review.rating
+        return (sum / reviews.length);
+    }
 
     const edible_menu_items = () => {
         let edibles = menu_items.filter(item => !(item.allergens.some(a => allergies.indexOf(a) >= 0)))
@@ -29,10 +42,18 @@ function RestaurantScreen(props) {
         return inedibles
     }
 
-    const renderItem = (item) => {
+    const renderMeal = (item, index) => {
         return (
-            < View style={styles.itemContainer} >
+            <View key={index.toString()} style={styles.mealContainer} >
                 <MealCard data={item} />
+            </View >
+        )
+    }
+
+    const renderReview = ({ item, index }) => {
+        return (
+            <View key={index.toString()} style={styles.reviewContainer} >
+                <ReviewCard data={item} />
             </View >
         )
     }
@@ -60,11 +81,46 @@ function RestaurantScreen(props) {
             <Text style={styles.menuTitle}>
                 Menu items you can eat
             </Text>
-            {edible_menu_items().map(item => renderItem(item))}
+            {edible_menu_items().map((item, index) => renderMeal(item, index))}
             <Text style={styles.menuTitle}>
                 Menu items you can't eat
             </Text>
-            {inedible_menu_items().map(item => renderItem(item))}
+            {inedible_menu_items().map((item, index) => renderMeal(item, index))}
+            <Text style={{ ...styles.menuTitle, fontSize: 18 }}>
+                Reviews
+            </Text>
+            <View style={styles.ratingContainer}>
+                <AirbnbRating
+                    defaultRating={4.5}
+                    showRating={false}
+                    selectedColor='#EF767A'
+                    isDisabled={true}
+                />
+            </View>
+            <Text style={styles.menuTitle}>
+                {`${average_rating()} Stars Overall`}
+            </Text>
+            <FlatList
+                style={styles.listContainer}
+                data={reviews}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={renderReview}
+            />
+            <Button style={styles.button} onPress={() => setrModalVisible(true)} textStyle={{ fontSize: 14 }} text="Leave a review" />
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={rModalVisible}
+            >
+                <ReviewModal onClose={() => setrModalVisible(false)} onSubmit={() => { setrModalVisible(false); setcModalVisible(true) }} />
+            </Modal>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={cModalVisible}
+            >
+                <ConfirmationModal onClose={() => setcModalVisible(false)} text="Thank you for leaving a review!" />
+            </Modal>
         </ScrollView>
     </SafeAreaView>);
 }
@@ -109,6 +165,7 @@ const styles = StyleSheet.create({
     },
     button: {
         flex: 1,
+        height: 40
     },
     buttonDiv: {
         flex: 0.1
@@ -118,10 +175,19 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         marginBottom: 10
     },
-    itemContainer: {
+    mealContainer: {
         flex: 1,
         marginBottom: 8,
         height: 70,
+        width: "100%",
+    },
+    ratingContainer: {
+        alignItems: "flex-start"
+    },
+    reviewContainer: {
+        flex: 1,
+        marginBottom: 8,
+        height: 90,
         width: "100%",
     }
 });

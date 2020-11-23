@@ -1,33 +1,23 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import SearchBar from "../components/SearchBar"
 
 function SearchScreen() {
-    return (<View style={styles.container}>
-        <Image style={styles.logo} source={require('../../assets/allergy-assist.png')}></Image>
-        <Text style={styles.caption}>
-            Search Screen
-        </Text>
-    </View>);
+    return (<SafeAreaView style={styles.container}>
+        <View style={styles.searchContainer}>
+            <SearchBar />
+        </View>
+    </SafeAreaView>);
 }
 
 export default SearchScreen;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: "column",
+        flex: 1
     },
-    logo: {
-        resizeMode: 'contain',
-        width: 200,
-        height: 200,
-        margin: 10
+    searchContainer: {
+        height: 60,
+        padding: 10,
     },
-    caption: {
-        fontSize: 20,
-        fontWeight: "bold"
-    }
 });

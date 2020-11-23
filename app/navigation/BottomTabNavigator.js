@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UserScreen from '../screens/UserScreen';
 import RestaurantScreen from "../screens/RestaurantScreen";
+import MealScreen from "../screens/MealScreen";
 import HeaderTitle from "../components/Header";
 import { TAB_ICONS } from "../utils/utils"
 
@@ -88,6 +89,10 @@ export function RestaurantNavigator() {
       <RestaurantStack.Screen
         name="RestaurantScreen"
         component={RestaurantScreen}
+      />
+      <RestaurantStack.Screen
+        name="MealScreen"
+        component={MealScreen}
       />
     </RestaurantStack.Navigator>
   );
