@@ -29,7 +29,6 @@ export default function ShareModal(props) {
                         <Text style={styles.profileText}>{item[0]}</Text>
                     </View>
                 ))}
-
             </View>
             <CheckBox
                 style={styles.checkbox}

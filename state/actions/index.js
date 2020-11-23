@@ -1,6 +1,6 @@
 const actionTypes = {
-    INCREMENT: 'INCREMENT',
-    DECREMENT: 'DECREMENT'
+    ADD_PROFILE: 'ADD_PROFILE',
+    REMOVE_PROFILE: 'REMOVE_PROFILE'
 }
 
 export default actionTypes;

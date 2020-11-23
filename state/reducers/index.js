@@ -1,8 +1,8 @@
-import counterReducer from "./counterReducer";
+import allergyReducer from "./allergyReducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    counter: counterReducer
+    restrictions: allergyReducer
 })
 
 export default rootReducer;

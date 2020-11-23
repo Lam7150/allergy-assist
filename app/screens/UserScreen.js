@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { SafeAreaView, Modal, ScrollView, Text, StyleSheet } from "react-native";
+import { connect } from "react-redux";
+import { add_profile, remove_profile } from "../../state/actions/allergyActions";
+import actionTypes from "../../state/actions/index";
 import CheckBox from '../components/Checkbox';
 import Button from "../components/Button"
 import ProfileCard from "../components/ProfileCard"
@@ -9,7 +12,8 @@ import { ALLERGIES, DIETARY_RESTRICTIONS } from "../constants/Allergies";
 const SHARED_PROFILES = ["SABRINA", "LAM", "ALEX"]
 const PENDING_PROFILES = ["ANONYMOUS"]
 
-function UserScreen() {
+function UserScreen(props) {
+    const { restrictions, add_profile, remove_profile } = props;
     const [allergies, setAllergies] = useState(() => { d = {}; ALLERGIES.forEach(a => d[a] = false); return d; })
     const [dietRestrictions, setDietRestrictions] = useState(() => { d = {}; DIETARY_RESTRICTIONS.forEach(a => d[a] = false); return d; })
     const [sharedProfiles, setSharedProfiles] = useState(SHARED_PROFILES)
@@ -43,6 +47,13 @@ function UserScreen() {
             handleSharedProfile(target, false)
     }
 
+    function saveProfile() {
+        const activeAllergies = Object.keys(allergies).filter(a => allergies[a]);
+        const activeRestrictions = Object.keys(dietRestrictions).filter(d => dietRestrictions[d]);
+        const allRestrictions = ["me"].concat(activeAllergies, activeRestrictions);
+        add_profile(allRestrictions);
+    }
+
     return (<SafeAreaView style={styles.container}>
         <ScrollView>
             <Text style={styles.title}>
@@ -69,7 +80,7 @@ function UserScreen() {
                     color="#EF767A"
                 />
             ))}
-            <Button style={styles.button} text="SAVE PROFILE" />
+            <Button style={styles.button} text="SAVE PROFILE" onPress={() => saveProfile()} />
             <Button style={{ ...styles.button, marginBottom: 10 }} text="SHARE PROFILE" onPress={() => setModalVisible(true)} />
             {sharedProfiles.length ? (<Text style={styles.title}>
                 SHARED PROFILES
@@ -107,7 +118,16 @@ function UserScreen() {
     </SafeAreaView>);
 }
 
-export default UserScreen;
+const mapStateToProps = (state) => ({
+    restrictions: state.restrictions
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    add_profile: (profile) => dispatch(add_profile(profile)),
+    remove_profile: (profile) => dispatch({ type: actionTypes.REMOVE_PROFILE, payload: profile }),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserScreen);
 
 const styles = StyleSheet.create({
     container: {
