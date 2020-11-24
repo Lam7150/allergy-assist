@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SafeAreaView, View, ScrollView, Modal, TouchableOpacity, Text, Image, StyleSheet } from "react-native";
+import { connect } from "react-redux";
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import ErrorModal from "../components/ErrorModal";
 import ConfirmationModal from "../components/ConfirmationModal";
@@ -7,11 +8,33 @@ import Button from "../components/Button";
 import chickenSandwich from "../../assets/meals/chicken-sandwich.png"
 
 function MealScreen(props) {
-    const { route, navigation } = props;
+    const { route, navigation, restrictions } = props;
     const { data } = route.params;
     const { name, price, ingredients, allergens, relevant_allergens } = data;
     const [eModalVisible, seteModalVisible] = useState(false);
     const [cModalVisible, setcModalVisible] = useState(false);
+
+    function getAffectedProfiles(str) {
+        let affected = new Set();
+        relevant_allergens.forEach(a =>
+            restrictions[a].forEach(p => affected.add(p))
+        );
+        let affectedNames = []
+        Array.from(affected).forEach(name => affectedNames.push(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()))
+        return affectedNames;
+    }
+
+    function getAllergenText() {
+        if (relevant_allergens.length > 0) {
+            let affectedProfiles = getAffectedProfiles();
+            if (affectedProfiles.length == 1 && affectedProfiles[0] == "Me")
+                return `Contains ${relevant_allergens.join(", ")}`
+            else
+                return `Contains ${relevant_allergens.join(", ")}. Affects ${getAffectedProfiles().join(", ")}`
+        }
+        else
+            return "No Allergens";
+    }
 
     return (<SafeAreaView style={styles.container}>
         <ScrollView>
@@ -27,11 +50,11 @@ function MealScreen(props) {
                     <Text style={styles.name}>
                         {name}
                     </Text>
-                    <Text style={styles.otherText}>
+                    <Text style={styles.price}>
                         {`$${price}`}
                     </Text>
-                    <Text style={styles.otherText}>
-                        {(relevant_allergens.length > 0) ? `! Has ${relevant_allergens}` : "No Allergens"}
+                    <Text style={(relevant_allergens.length > 0) ? styles.allergens : styles.noAllergens}>
+                        {getAllergenText()}
                     </Text>
                 </View>
             </View>
@@ -63,7 +86,11 @@ function MealScreen(props) {
     </SafeAreaView>);
 }
 
-export default MealScreen;
+const mapStateToProps = (state) => ({
+    restrictions: state.restrictions
+})
+
+export default connect(mapStateToProps)(MealScreen);
 
 const styles = StyleSheet.create({
     container: {
@@ -108,9 +135,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: "bold",
     },
-    otherText: {
+    price: {
         flex: 1,
-        fontSize: 16,
+        fontSize: 16
+    },
+    allergens: {
+        flex: 1,
+        color: "#ff6666",
+        fontSize: 16
+    },
+    noAllergens: {
+        flex: 1,
+        fontSize: 16
     },
     button: {
         height: 40,
