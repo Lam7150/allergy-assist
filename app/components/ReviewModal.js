@@ -19,7 +19,6 @@ export default function ReviewModal(props) {
                 <AirbnbRating
                     defaultRating={0}
                     showRating={false}
-                    selectedColor='#EF767A'
                 />
             </View>
             <TextInput style={styles.reviewInput} placeholder={"Write a review here..."} multiline={true} blurOnSubmit={true} />

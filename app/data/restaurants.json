@@ -3,7 +3,6 @@
     {
       "name": "Chick-fil-A",
       "distance": 1.5,
-      "edible": 8,
       "menu_items": [
         {
           "name": "Chick-fil-A Chicken Sandwich",
@@ -16,7 +15,10 @@
             "Peanut Oil"
           ],
           "allergens": [
-            "Peanut"
+            "Peanut",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
@@ -32,7 +34,10 @@
             "Tomato"
           ],
           "allergens": [
-            "Peanut"
+            "Peanut",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
@@ -47,7 +52,10 @@
             "Peppers"
           ],
           "allergens": [
-            "Peanut"
+            "Peanut",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
@@ -66,6 +74,27 @@
           ],
           "allergens": [
             "Peanut",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian",
+            "Kosher"
+          ]
+        },
+        {
+          "name": "Spicy Southwest Salad",
+          "price": 8.19,
+          "ingredients": [
+            "Butter",
+            "Spinach",
+            "Lettuce",
+            "Tomato",
+            "Peppers",
+            "Cheese",
+            "Chili Lime",
+            "Black Beans",
+            "Dressing"
+          ],
+          "allergens": [
             "Dairy"
           ]
         }
@@ -86,25 +115,28 @@
     {
       "name": "Olive Garden",
       "distance": 3,
-      "edible": 5,
       "menu_items": [
         {
           "name": "Lasagna Classico",
           "price": 15.79,
           "ingredients": [
-            "pasta",
-            "parmesan",
-            "mozzarella",
-            "pecorino romano",
-            "tomato sauce",
-            "pan-seared beef",
+            "Pasta",
+            "Parmesan",
+            "Mozzarella",
+            "Pecorino Romano",
+            "Tomato sauce",
+            "Pan-seared beef",
             "Italian Sausage"
           ],
           "allergens": [
             "Dairy",
             "Wheat",
             "Gluten",
-            "Soy"
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian",
+            "Kosher"
           ]
         },
         {
@@ -125,13 +157,13 @@
       ],
       "reviews": [
         {
-          "rating": 4,
-          "name": "Jennifer L.",
-          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
+          "rating": 2,
+          "name": "Eric A.",
+          "review": "Terrible restaurant, not accomodating and disregarding of my needs. 10/10 would never eat again."
         },
         {
           "rating": 4,
-          "name": "Susan F.",
+          "name": "Guy F.",
           "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
@@ -141,56 +173,78 @@
     {
       "name": "McDonalds",
       "distance": 0.4,
-      "edible": 3,
       "menu_items": [
         {
           "name": "Big Mac",
           "price": 5.99,
           "ingredients": [
-            "bun",
-            "beef patty",
-            "shredded lettuce",
-            "big mac sauce",
-            "american cheese",
-            "pickle",
-            "onions"
+            "White Bun",
+            "Beef Patty",
+            "Shredded Lettuces",
+            "Big Mac Sauce",
+            "American Cheese",
+            "Pickle",
+            "Onions"
           ],
           "allergens": [
             "Dairy",
             "Wheat",
             "Egg",
-            "Soy"
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
           "name": "McDouble",
           "price": 1.99,
           "ingredients": [
-            "bun",
-            "beef patty",
-            "shredded lettuce",
-            "ketchup",
-            "american cheese",
-            "pickle",
-            "onions",
-            "mustard"
+            "White Bun",
+            "Beef Patty",
+            "Shredded Lettuces",
+            "American Cheese",
+            "Pickle",
+            "Onions",
+            "Ketchup",
+            "Mustard"
           ],
           "allergens": [
-            "Milk",
+            "Dairy",
             "Wheat",
-            "Soy"
+            "Soy",
+            "Gluten",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
+          ]
+        },
+        {
+          "name": "Hash Brown",
+          "price": 1.99,
+          "ingredients": [
+            "Potato",
+            "Egg",
+            "American Cheese",
+            "Onions",
+            "Butter",
+            "Salt"
+          ],
+          "allergens": [
+            "Egg",
+            "Dairy"
           ]
         }
       ],
       "reviews": [
         {
-          "rating": 4,
-          "name": "Jennifer L.",
-          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
+          "rating": 1,
+          "name": "Jason M.",
+          "review": "Terrible restaurant, not accomodating and disregarding of my needs. 10/10 would never eat again."
         },
         {
-          "rating": 4,
-          "name": "Susan F.",
+          "rating": 5,
+          "name": "Sissy P.",
           "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
@@ -198,23 +252,26 @@
     {
       "name": "Mia Za's",
       "distance": 0.8,
-      "edible": 2,
       "menu_items": [
         {
           "name": "Hawaiian Pizza",
           "price": 7.99,
           "ingredients": [
-            "dough",
-            "tomato sauce",
-            "mozzarella",
-            "parmesan",
-            "pineapple",
-            "canadian bacon",
-            "bacon"
+            "Dough",
+            "Tomato Sauce",
+            "Mozzarella",
+            "Parmesan",
+            "Pineapple",
+            "Ham",
+            "Bacon"
           ],
           "allergens": [
             "Dairy",
-            "Wheat"
+            "Wheat",
+            "Gluten",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
@@ -224,7 +281,8 @@
             "Parmesan Cheese",
             "Heavy Cream",
             "Garlic",
-            "Fettucine Pasta"
+            "Fettucine Pasta",
+            "Parsley"
           ],
           "allergens": [
             "Dairy",
@@ -236,12 +294,12 @@
       "reviews": [
         {
           "rating": 4,
-          "name": "Jennifer L.",
+          "name": "Max R.",
           "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
         },
         {
           "rating": 4,
-          "name": "Susan F.",
+          "name": "Billy J.",
           "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]
@@ -250,45 +308,68 @@
   "top_rated": [
     {
       "name": "Burger King",
-      "distance": 0.4,
-      "edible": 3,
+      "distance": 6.3,
       "menu_items": [
         {
-          "name": "Big Mac",
-          "price": 5.99,
+          "name": "Whopper",
+          "price": 5.59,
           "ingredients": [
-            "bun",
-            "beef patty",
-            "shredded lettuce",
-            "big mac sauce",
-            "american cheese",
-            "pickle",
-            "onions"
+            "White Bun",
+            "Beef Patty",
+            "Shredded Lettuces",
+            "American Cheese",
+            "Pickle",
+            "Onions",
+            "Ketchup",
+            "Mayonnaise"
           ],
           "allergens": [
             "Dairy",
-            "Wheat",
             "Egg",
-            "Soy"
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
-          "name": "McDouble",
-          "price": 1.99,
+          "name": "Bacon King",
+          "price": 5.99,
           "ingredients": [
-            "bun",
-            "beef patty",
-            "shredded lettuce",
-            "ketchup",
-            "american cheese",
-            "pickle",
-            "onions",
-            "mustard"
+            "White Bun",
+            "Beef Patty",
+            "Bacon",
+            "American Cheese",
+            "Ketchup",
+            "Mayonnaise"
           ],
           "allergens": [
             "Milk",
             "Wheat",
-            "Soy"
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
+          ]
+        },
+        {
+          "name": "Spicy Chicken Nuggets",
+          "price": 4.99,
+          "ingredients": [
+            "Chicken",
+            "Flour",
+            "Black Pepper",
+            "Chili",
+            "Egg",
+            "Milk"
+          ],
+          "allergens": [
+            "Milk",
+            "Wheat",
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         }
       ],
@@ -307,57 +388,84 @@
     },
     {
       "name": "Wendys",
-      "distance": 0.4,
-      "edible": 3,
+      "distance": 9.2,
       "menu_items": [
         {
-          "name": "Big Mac",
-          "price": 5.99,
+          "name": "Bacon Jalapeno Chicken",
+          "price": 5.49,
           "ingredients": [
-            "bun",
-            "beef patty",
-            "shredded lettuce",
-            "big mac sauce",
-            "american cheese",
-            "pickle",
-            "onions"
+            "White Bun",
+            "Chicken",
+            "Pickles",
+            "Bacon",
+            "Jalapenos",
+            "American Cheese",
+            "Pickles",
+            "Onions",
+            "Honey Mustard"
           ],
           "allergens": [
             "Dairy",
             "Wheat",
             "Egg",
-            "Soy"
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         },
         {
-          "name": "McDouble",
-          "price": 1.99,
+          "name": "Classic Chicken Sandwich",
+          "price": 5.99,
           "ingredients": [
-            "bun",
-            "beef patty",
-            "shredded lettuce",
-            "ketchup",
-            "american cheese",
-            "pickle",
-            "onions",
-            "mustard"
+            "White Bun",
+            "Chicken",
+            "Lettuce",
+            "Pickles",
+            "American Cheese",
+            "Onion",
+            "Ketchup",
+            "Mayonnaise"
           ],
           "allergens": [
             "Milk",
             "Wheat",
-            "Soy"
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
+          ]
+        },
+        {
+          "name": "Spicy Chicken Nuggets",
+          "price": 4.99,
+          "ingredients": [
+            "Chicken",
+            "Flour",
+            "Black Pepper",
+            "Chili",
+            "Egg",
+            "Milk"
+          ],
+          "allergens": [
+            "Milk",
+            "Wheat",
+            "Soy",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian"
           ]
         }
       ],
       "reviews": [
         {
           "rating": 4,
-          "name": "Jennifer L.",
+          "name": "Mark L.",
           "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
         },
         {
           "rating": 4,
-          "name": "Susan F.",
+          "name": "Mickey M.",
           "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
         }
       ]

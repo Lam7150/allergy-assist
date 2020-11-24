@@ -22,3 +22,17 @@ export const ERRORS = [
     "Accomodations",
     "Other"
 ]
+
+export const DIET_DANGERS = {
+    Dairy: "Dairy",
+    Egg: "Egg",
+    Wheat: "Wheat",
+    Shellfish: "Shellfish",
+    Soy: "Soy",
+    Peanuts: "Peanuts",
+    Melons: "Melons",
+    Vegetarian: "Meat",
+    Vegan: "Meat",
+    Kosher: "Non-Kosher Ingredients",
+    Pescatarian: "Meat",
+}

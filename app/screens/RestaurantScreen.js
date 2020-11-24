@@ -97,9 +97,8 @@ function RestaurantScreen(props) {
                     </Text>
                     <View style={styles.ratingContainer}>
                         <AirbnbRating
-                            defaultRating={4.5}
+                            defaultRating={average_rating()}
                             showRating={false}
-                            selectedColor='#EF767A'
                             isDisabled={true}
                         />
                     </View>
@@ -194,7 +193,8 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     ratingContainer: {
-        alignItems: "flex-start"
+        alignItems: "flex-start",
+        marginBottom: 5
     },
     reviewContainer: {
         flex: 1,

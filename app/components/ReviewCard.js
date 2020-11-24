@@ -18,7 +18,6 @@ export default function ReviewCard(props) {
                 <AirbnbRating
                     defaultRating={rating}
                     showRating={false}
-                    selectedColor='#EF767A'
                     isDisabled={true}
                     size={16}
                 />

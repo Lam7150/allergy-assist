@@ -125,7 +125,7 @@ const mapDispatchToProps = (dispatch) => ({
     update_profile: (profile) => dispatch(update_profile(profile)),
 })
 
-export default connect(mapDispatchToProps)(UserScreen);
+export default connect(null, mapDispatchToProps)(UserScreen);
 
 const styles = StyleSheet.create({
     container: {
