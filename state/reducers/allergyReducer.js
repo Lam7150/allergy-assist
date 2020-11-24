@@ -1,19 +1,32 @@
 import actionTypes from "../actions";
+import * as data from "../../app/data/profiles.json"
+const { shared_profiles } = data
 
-const initialState = {
-    // Each allergen contains the names of the corresponding profiles affected
-    "Dairy": [],
-    "Egg": [],
-    "Wheat": [],
-    "Shellfish": [],
-    "Soy": [],
-    "Peanuts": [],
-    "Melons": [],
-    "Vegetarian": [],
-    "Vegan": [],
-    "Kosher": [],
-    "Pescatarian": [],
+function initializeProfiles() {
+    let state = {
+        // Each allergen contains the names of the corresponding profiles affected
+        "Dairy": [],
+        "Egg": [],
+        "Wheat": [],
+        "Shellfish": [],
+        "Soy": [],
+        "Peanuts": [],
+        "Melons": [],
+        "Vegetarian": [],
+        "Vegan": [],
+        "Kosher": [],
+        "Pescatarian": [],
+    }
+
+    shared_profiles.forEach(profile => {
+        profile.restrictions.forEach(r => state[r].push(profile.name))
+    })
+
+    return state;
 }
+
+const initialState = initializeProfiles();
+
 
 /** Payload looks like this:
     ADD_PROFILE: [<name>, ...allergens] // yes this is bad i know lol
@@ -30,15 +43,24 @@ const allergyReducer = (state = initialState, action) => {
             return { ...state, ...newProfiles };
         }
         case actionTypes.REMOVE_PROFILE: {
-            let newState = { ...state };
+            let newProfiles = {};
             let profile = action.payload;
             for (let key of Object.keys(state)) {
-                const profileIndex = state[key].indexOf(profile);
-                if (profileIndex > -1)
-                    newState[key].splice(profileIndex, 1);
+                newProfiles[key] = state[key].filter(p => p != profile)
             }
-            console.log(newState);
-            return newState;
+            return { ...state, ...newProfiles };
+        }
+        case actionTypes.UPDATE_PROFILE: {
+            let newProfiles = {};
+            let profile = action.payload[0];
+            for (let key of Object.keys(state)) {
+                let active = action.payload.indexOf(key) > -1
+                if (active && state[key].indexOf(profile) == -1)        // If active and profile not present, add profile
+                    newProfiles[key] = [profile].concat(state[key])
+                else if (!active && state[key].indexOf(profile) > -1)   // If inactive and profile present, remove profile
+                    newProfiles[key] = state[key].filter(p => p != profile)
+            }
+            return { ...state, ...newProfiles };
         }
         default:
             return state;

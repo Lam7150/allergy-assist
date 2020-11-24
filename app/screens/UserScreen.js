@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { SafeAreaView, Modal, ScrollView, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
-import { add_profile, remove_profile } from "../../state/actions/allergyActions";
-import actionTypes from "../../state/actions/index";
+import { add_profile, remove_profile, update_profile } from "../../state/actions/allergyActions";
 import CheckBox from '../components/Checkbox';
 import Button from "../components/Button"
 import ProfileCard from "../components/ProfileCard"
 import ShareModal from "../components/ShareModal"
 import { ALLERGIES, DIETARY_RESTRICTIONS } from "../constants/Allergies";
-
-const SHARED_PROFILES = ["SABRINA", "LAM", "ALEX"]
-const PENDING_PROFILES = ["ANONYMOUS"]
+import * as data from "../data/profiles.json"
+const { shared_profiles, pending_profiles } = data
 
 function UserScreen(props) {
-    const { restrictions, add_profile, remove_profile } = props;
+    const { add_profile, remove_profile, update_profile } = props;
     const [allergies, setAllergies] = useState(() => { d = {}; ALLERGIES.forEach(a => d[a] = false); return d; })
     const [dietRestrictions, setDietRestrictions] = useState(() => { d = {}; DIETARY_RESTRICTIONS.forEach(a => d[a] = false); return d; })
-    const [sharedProfiles, setSharedProfiles] = useState(SHARED_PROFILES)
-    const [pendingProfiles, setPendingProfiles] = useState(PENDING_PROFILES)
+    const [sharedProfiles, setSharedProfiles] = useState(shared_profiles)
+    const [pendingProfiles, setPendingProfiles] = useState(pending_profiles)
     const [modalVisible, setModalVisible] = useState(false)
 
     function handleAllergyChange(item) {
@@ -35,14 +33,17 @@ function UserScreen(props) {
     }
 
     function handleSharedProfile(target, isClosed) {
-        if (isClosed)
-            setSharedProfiles(sharedProfiles.filter(profile => profile != target))
-        else
+        if (isClosed) {
+            setSharedProfiles(sharedProfiles.filter(profile => profile.name != target.name))
+            remove_profile(target.name)
+        } else {
             setSharedProfiles([...sharedProfiles, target])
+            add_profile([target.name, ...target.restrictions])
+        }
     }
 
     function handlePendingProfile(target, isClosed) {
-        setPendingProfiles(pendingProfiles.filter(profile => profile != target))
+        setPendingProfiles(pendingProfiles.filter(profile => profile.name != target.name))
         if (!isClosed)
             handleSharedProfile(target, false)
     }
@@ -51,7 +52,7 @@ function UserScreen(props) {
         const activeAllergies = Object.keys(allergies).filter(a => allergies[a]);
         const activeRestrictions = Object.keys(dietRestrictions).filter(d => dietRestrictions[d]);
         const allRestrictions = ["me"].concat(activeAllergies, activeRestrictions);
-        add_profile(allRestrictions);
+        update_profile(allRestrictions);
     }
 
     return (<SafeAreaView style={styles.container}>
@@ -90,7 +91,7 @@ function UserScreen(props) {
                 <ProfileCard
                     key={index.toString()}
                     style={styles.profile}
-                    text={item}
+                    text={item.name}
                     onClose={() => handleSharedProfile(item, true)}
                 />
             ))}
@@ -103,7 +104,7 @@ function UserScreen(props) {
                     pending
                     key={index.toString()}
                     style={styles.profile}
-                    text={item}
+                    text={item.name}
                     onClose={() => handlePendingProfile(item, true)}
                     onAccept={() => handlePendingProfile(item, false)}
                 />
@@ -118,16 +119,13 @@ function UserScreen(props) {
     </SafeAreaView>);
 }
 
-const mapStateToProps = (state) => ({
-    restrictions: state.restrictions
-})
-
 const mapDispatchToProps = (dispatch) => ({
     add_profile: (profile) => dispatch(add_profile(profile)),
-    remove_profile: (profile) => dispatch({ type: actionTypes.REMOVE_PROFILE, payload: profile }),
+    remove_profile: (profile) => dispatch(remove_profile(profile)),
+    update_profile: (profile) => dispatch(update_profile(profile)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserScreen);
+export default connect(mapDispatchToProps)(UserScreen);
 
 const styles = StyleSheet.create({
     container: {

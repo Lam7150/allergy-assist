@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, SafeAreaView, FlatList, ScrollView, Text, Image, TouchableOpacity, StyleSheet, Modal } from "react-native";
+import { View, SafeAreaView, FlatList, Text, Image, TouchableOpacity, StyleSheet, Modal } from "react-native";
+import { connect } from "react-redux";
 import Button from "../components/Button"
 import MealCard from "../components/MealCard"
 import ReviewCard from "../components/ReviewCard"
@@ -10,12 +11,15 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { RESTAURANT_IMAGE } from "../utils/utils"
 
 function RestaurantScreen(props) {
-    const { route, navigation } = props;
+    const { route, navigation, restrictions } = props;
     const { data } = route.params;
-    const { name, distance, edible, menu_items, reviews } = data;
-    const allergies = ["Dairy"]
+    const { name, distance, menu_items, reviews } = data;
     const [rModalVisible, setrModalVisible] = useState(false);
     const [cModalVisible, setcModalVisible] = useState(false);
+
+    const get_number_allergic = (item) => {
+        return (item in restrictions) ? restrictions[item].length : 0;
+    }
 
     const average_rating = () => {
         let sum = 0;
@@ -25,7 +29,7 @@ function RestaurantScreen(props) {
     }
 
     const edible_menu_items = () => {
-        let edibles = menu_items.filter(item => !(item.allergens.some(a => allergies.indexOf(a) >= 0)))
+        let edibles = menu_items.filter(item => !(item.allergens.some(a => get_number_allergic(a) != 0)))
         edibles.forEach(item => {
             item.relevant_allergens = []
         })
@@ -34,9 +38,9 @@ function RestaurantScreen(props) {
     }
 
     const inedible_menu_items = () => {
-        let inedibles = menu_items.filter(item => item.allergens.some(a => allergies.indexOf(a) >= 0))
+        let inedibles = menu_items.filter(item => item.allergens.some(a => get_number_allergic(a) != 0))
         inedibles.forEach(item => {
-            item.relevant_allergens = item.allergens.filter(a => allergies.indexOf(a) >= 0)
+            item.relevant_allergens = item.allergens.filter(a => get_number_allergic(a) != 0)
         })
 
         return inedibles
@@ -129,7 +133,11 @@ function RestaurantScreen(props) {
     </SafeAreaView>);
 }
 
-export default RestaurantScreen;
+const mapStateToProps = (state) => ({
+    restrictions: state.restrictions
+})
+
+export default connect(mapStateToProps)(RestaurantScreen);
 
 const styles = StyleSheet.create({
     container: {

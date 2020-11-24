@@ -1,12 +1,22 @@
 import React from "react";
 import { Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { connect } from "react-redux";
 import { RESTAURANT_IMAGE } from "../utils/utils"
 import { useNavigation } from '@react-navigation/native';
 
-export default function RestaurantCard(props) {
+function RestaurantCard(props) {
     const navigation = useNavigation();
-    const { data } = props;
-    const { name, distance, edible } = data;
+    const { data, restrictions } = props;
+    const { name, distance, menu_items } = data;
+
+    const get_number_allergic = (item) => {
+        return (item in restrictions) ? restrictions[item].length : 0;
+    }
+
+    const num_edibles = () => {
+        let edibles = menu_items.filter(item => !(item.allergens.some(a => get_number_allergic(a) != 0)))
+        return edibles.length
+    }
 
     return (<TouchableOpacity style={styles.container} onPress={() => navigation.navigate("RestaurantScreen", { data: data })}>
         <Image source={RESTAURANT_IMAGE[name]} resizeMode="cover" style={styles.image} />
@@ -17,10 +27,16 @@ export default function RestaurantCard(props) {
             {`${distance} miles away`}
         </Text>
         <Text>
-            {`${edible} items you can eat`}
+            {`${num_edibles()} items you can eat`}
         </Text>
     </TouchableOpacity>);
 }
+
+const mapStateToProps = (state) => ({
+    restrictions: state.restrictions
+})
+
+export default connect(mapStateToProps)(RestaurantCard);
 
 const styles = StyleSheet.create({
     container: {

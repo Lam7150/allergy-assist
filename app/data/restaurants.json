@@ -250,13 +250,117 @@
   "top_rated": [
     {
       "name": "Burger King",
-      "distance": 4,
-      "edible": 12
+      "distance": 0.4,
+      "edible": 3,
+      "menu_items": [
+        {
+          "name": "Big Mac",
+          "price": 5.99,
+          "ingredients": [
+            "bun",
+            "beef patty",
+            "shredded lettuce",
+            "big mac sauce",
+            "american cheese",
+            "pickle",
+            "onions"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+            "Egg",
+            "Soy"
+          ]
+        },
+        {
+          "name": "McDouble",
+          "price": 1.99,
+          "ingredients": [
+            "bun",
+            "beef patty",
+            "shredded lettuce",
+            "ketchup",
+            "american cheese",
+            "pickle",
+            "onions",
+            "mustard"
+          ],
+          "allergens": [
+            "Milk",
+            "Wheat",
+            "Soy"
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "rating": 4,
+          "name": "Jennifer L.",
+          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
+        },
+        {
+          "rating": 4,
+          "name": "Susan F.",
+          "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
+        }
+      ]
     },
     {
       "name": "Wendys",
-      "distance": 5,
-      "edible": 9
+      "distance": 0.4,
+      "edible": 3,
+      "menu_items": [
+        {
+          "name": "Big Mac",
+          "price": 5.99,
+          "ingredients": [
+            "bun",
+            "beef patty",
+            "shredded lettuce",
+            "big mac sauce",
+            "american cheese",
+            "pickle",
+            "onions"
+          ],
+          "allergens": [
+            "Dairy",
+            "Wheat",
+            "Egg",
+            "Soy"
+          ]
+        },
+        {
+          "name": "McDouble",
+          "price": 1.99,
+          "ingredients": [
+            "bun",
+            "beef patty",
+            "shredded lettuce",
+            "ketchup",
+            "american cheese",
+            "pickle",
+            "onions",
+            "mustard"
+          ],
+          "allergens": [
+            "Milk",
+            "Wheat",
+            "Soy"
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "rating": 4,
+          "name": "Jennifer L.",
+          "review": "Excellent restaurant, very accomodating and compassionate to my needs. 10/10 would eat again."
+        },
+        {
+          "rating": 4,
+          "name": "Susan F.",
+          "review": "Great service! They initially made a mistake with my order but they redid it right away and at no cost to me."
+        }
+      ]
     }
   ]
 }

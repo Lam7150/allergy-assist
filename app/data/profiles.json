@@ -1,0 +1,64 @@
+{
+    "shared_profiles": [
+        {
+            "name": "SABRINA",
+            "initials": "SL",
+            "restrictions": [
+                "Dairy"
+            ]
+        },
+        {
+            "name": "DAVID",
+            "initials": "DF",
+            "restrictions": [
+                "Egg"
+            ]
+        },
+        {
+            "name": "ALEX",
+            "initials": "AL",
+            "restrictions": [
+                "Wheat"
+            ]
+        }
+    ],
+    "pending_profiles": [
+        {
+            "name": "ANONYMOUS",
+            "initials": "NA",
+            "restrictions": [
+                "Vegetarian"
+            ]
+        }
+    ],
+    "nearby_profiles": [
+        {
+            "name": "SABRINA",
+            "initials": "SL",
+            "restrictions": [
+                "Dairy"
+            ]
+        },
+        {
+            "name": "DAVID",
+            "initials": "DF",
+            "restrictions": [
+                "Egg"
+            ]
+        },
+        {
+            "name": "LAM",
+            "initials": "LT",
+            "restrictions": [
+                "Dairy"
+            ]
+        },
+        {
+            "name": "ALEX",
+            "initials": "AL",
+            "restrictions": [
+                "Wheat"
+            ]
+        }
+    ]
+}
