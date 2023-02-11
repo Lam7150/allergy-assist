@@ -24,5 +24,8 @@ Helping users find meals without having to fear for their lives since 2020
 2. Start the app with `expo start`
 3. Open a real-time hot reload preview with on the `Expo` app by scanning the QR code!
 
+### Want to see the app in action?
+See our Final User Evaluation Presentation here: https://docs.google.com/presentation/d/1mJSZ58W3dd4nOWEs1GrWFLovjKzoAduSc5lWbgKWgAE/edit?usp=sharing
+
 ## Team
 Made by Lam Tran, Evan Eckels, Sabrina Li, David-Fernandez Wang, Alex Li Fall 2020.
