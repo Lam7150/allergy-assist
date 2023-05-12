@@ -14,18 +14,17 @@
   <a href="#license">License</a>
 </p>
 
+![allergy_assist](https://github.com/Lam7150/allergy-assist/assets/29765024/49871abd-3067-4e9f-b605-ead9efa7074a)
+
 ## Key Features
 Helping users find meals without having to fear for their lives since 2020
 
 ## How To Use
 1. Clone this repo into your local directory
-1. Install expo-cli with `npm install expo-cli --global`
-2. Install dependencies with `yarn install`
-2. Start the app with `expo start`
-3. Open a real-time hot reload preview with on the `Expo` app by scanning the QR code!
-
-### Want to see the app in action?
-See our Final User Evaluation Presentation <a href="https://docs.google.com/presentation/d/1mJSZ58W3dd4nOWEs1GrWFLovjKzoAduSc5lWbgKWgAE/edit?usp=sharing" target="_blank">here</a>
+2. Install expo-cli with `npm install expo-cli --global`
+3. Install dependencies with `yarn install`
+4. Start the app with `expo start`
+5. Open a real-time hot reload preview with on the `Expo` app by scanning the QR code!
 
 ## Team
-Made by Lam Tran, Evan Eckels, Sabrina Li, David-Fernandez Wang, Alex Li Fall 2020.
+Designed by Evan Eckels, Developed by Lam Tran, and User Researched by Sabrina Li, David-Fernandez Wang, and Alex Li Fall 2020.
